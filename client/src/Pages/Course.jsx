@@ -461,12 +461,12 @@ const Course = () => {
     gsap.fromTo(
       cardsRef.current,
       {
-        width:"0%",
-        margin:"10%"
+        width: "0%",
+        margin: "10%",
       },
       {
-       width:"100%",
-       margin:"0%"
+        width: "100%",
+        margin: "0%",
       }
     );
   }, []);

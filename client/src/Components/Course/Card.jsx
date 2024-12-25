@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { FaClock, FaIndianRupeeSign } from "react-icons/fa6";
 
-const Card = ({ title, image, price, duration, category , item }) => {
+const Card = ({ title, image, price, duration, category, item }) => {
   const cardRef = useRef();
   const contentRef = useRef();
 
