@@ -1,10 +1,19 @@
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import { FaClock, FaIndianRupeeSign } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ title, image, price, duration, category, item }) => {
   const cardRef = useRef();
   const contentRef = useRef();
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    console.log(item?.course_id);
+    navigate(`/course/${item?.course_id}`, {
+      state: item,
+    });
+  };
 
   const handleEnterMouse = () => {
     gsap.to(cardRef.current, {
@@ -41,6 +50,7 @@ const Card = ({ title, image, price, duration, category, item }) => {
 
   return (
     <div
+      onClick={handleNavigate}
       ref={cardRef}
       onMouseEnter={handleEnterMouse}
       onMouseLeave={handleEnterMouseOut}
